@@ -15,7 +15,6 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
     , ERC223MintableToken
     //#endif
 {
-    //#if defined(D_ONLY_TOKEN) && D_ONLY_TOKEN == true
     event Initialized();
     bool public initialized = false;
 
@@ -23,7 +22,6 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
         init();
         transferOwnership(TARGET_USER);
     }
-    //#endif
 
     function name() public pure returns (string _name) {
         return TOKEN_NAME;
@@ -47,7 +45,6 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
         return super.transfer(_to, _value);
     }
 
-    //#if defined(D_ONLY_TOKEN) && D_ONLY_TOKEN == true
     function init() private {
         require(!initialized);
         initialized = true;
@@ -65,7 +62,7 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
             if (freezes[i] == 0) {
                 mint(addresses[i], amounts[i]);
             } else {
-                mintAndFreeze(addresses[i], amounts[i], freezes[i]);
+//                mintAndFreeze(addresses[i], amounts[i], freezes[i]);
             }
         }
         //#endif
@@ -76,5 +73,4 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
 
         emit Initialized();
     }
-    //#endif
 }

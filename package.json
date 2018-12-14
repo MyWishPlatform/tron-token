@@ -1,38 +1,34 @@
 {
   "name": "ico-crowdsale",
   "version": "0.1.0",
-  "description": "ICO Crowdsale",
-  "main": "truffle.js",
+  "description": "Tron token",
+  "main": "tronbox.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "all-crowdsale-tests": "./scripts/all-crowdsale-tests.sh",
-    "all-token-tests": "./scripts/all-token-tests.sh",
-    "combine-crowdsale": "combine-contracts TemplateCrowdsale",
-    "combine-token": "combine-contracts MainToken",
-    "compile-crowdsale": "./scripts/compile-crowdsale.sh",
-    "compile-token": "./scripts/compile-token.sh",
-    "test-crowdsale": "./scripts/test-crowdsale.sh",
-    "test-token": "./scripts/test-token.sh",
+    "all-tests": "./scripts/all-token-tests.sh",
+    "combine": "combine-contracts MainToken",
+    "compile": "./scripts/compile-token.sh",
+    "migrate": "tronbox migrate",
+    "test": "./scripts/test-token.sh",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:sol": "solhint 'contracts/**/*.sol' 'template/**/*.sol'",
-    "test": "truffle test"
+    "lint:sol": "solhint 'contracts/**/*.sol' 'template/**/*.sol'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MyWishPlatform/ico-crowdsale.git"
+    "url": "git+https://github.com/MyWishPlatform/tron-token.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MyWishPlatform/ico-crowdsale/issues"
+    "url": "https://github.com/MyWishPlatform/tron-token/issues"
   },
-  "homepage": "https://github.com/MyWishPlatform/ico-crowdsale#readme",
+  "homepage": "https://github.com/MyWishPlatform/tron-token#readme",
   "dependencies": {
     "openzeppelin-solidity": "1.10.0",
-    "sc-library": "github:MyWishPlatform/sc-library#0.6.0"
+    "sc-library": "github:MyWishPlatform/sc-library#0.7.1"
   },
   "devDependencies": {
     "bignumber.js": "^7.2.1",
@@ -46,9 +42,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "ganache-core": "^2.1.3",
-    "solc": "0.4.23",
     "solhint": "^1.2.1",
-    "truffle": "^4.1.13"
+    "tronbox": "^2.3.0"
   }
 }
