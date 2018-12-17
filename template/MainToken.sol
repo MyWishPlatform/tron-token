@@ -62,7 +62,7 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
             if (freezes[i] == 0) {
                 mint(addresses[i], amounts[i]);
             } else {
-//                mintAndFreeze(addresses[i], amounts[i], freezes[i]);
+                mintAndFreeze(addresses[i], amounts[i], freezes[i]);
             }
         }
         //#endif
