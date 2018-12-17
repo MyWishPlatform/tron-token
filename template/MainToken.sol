@@ -3,18 +3,11 @@ pragma solidity ^0.4.23;
 import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
 import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
-//#if "D_ERC" == "ERC223"
-import "sc-library/contracts/ERC223/ERC223MintableToken.sol";
-//#endif
 import "./FreezableMintableToken.sol";
 import "./Consts.sol";
 
 
-contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
-    //#if "D_ERC" == "ERC223"
-    , ERC223MintableToken
-    //#endif
-{
+contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable {
     event Initialized();
     bool public initialized = false;
 
