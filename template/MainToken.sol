@@ -3,19 +3,11 @@ pragma solidity ^0.4.23;
 import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
 import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
-//#if "D_ERC" == "ERC223"
-import "sc-library/contracts/ERC223/ERC223MintableToken.sol";
-//#endif
 import "./FreezableMintableToken.sol";
 import "./Consts.sol";
 
 
-contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
-    //#if "D_ERC" == "ERC223"
-    , ERC223MintableToken
-    //#endif
-{
-    //#if defined(D_ONLY_TOKEN) && D_ONLY_TOKEN == true
+contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable {
     event Initialized();
     bool public initialized = false;
 
@@ -23,7 +15,6 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
         init();
         transferOwnership(TARGET_USER);
     }
-    //#endif
 
     function name() public pure returns (string _name) {
         return TOKEN_NAME;
@@ -47,7 +38,6 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
         return super.transfer(_to, _value);
     }
 
-    //#if defined(D_ONLY_TOKEN) && D_ONLY_TOKEN == true
     function init() private {
         require(!initialized);
         initialized = true;
@@ -76,5 +66,4 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable
 
         emit Initialized();
     }
-    //#endif
 }

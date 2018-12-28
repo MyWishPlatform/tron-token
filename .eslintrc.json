@@ -15,7 +15,7 @@
     "artifacts": false,
     "contract": false,
     "assert": false,
-    "web3": false
+    "tronWeb": false
   },
   "rules": {
     // Strict mode
