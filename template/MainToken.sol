@@ -16,15 +16,15 @@ contract MainToken is Consts, FreezableMintableToken, BurnableToken, Pausable {
         transferOwnership(TARGET_USER);
     }
 
-    function name() public pure returns (string _name) {
+    function name() public pure returns (string) {
         return TOKEN_NAME;
     }
 
-    function symbol() public pure returns (string _symbol) {
+    function symbol() public pure returns (string) {
         return TOKEN_SYMBOL;
     }
 
-    function decimals() public pure returns (uint8 _decimals) {
+    function decimals() public pure returns (uint8) {
         return TOKEN_DECIMALS_UINT8;
     }
 
