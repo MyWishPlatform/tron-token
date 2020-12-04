@@ -12,6 +12,7 @@
     "compile": "./scripts/compile-token.sh",
     "migrate": "tronbox migrate",
     "test": "./scripts/test-token.sh",
+    "fix-erc20": "./scripts/fix-erc20.sh",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:sol": "solhint 'contracts/**/*.sol' 'template/**/*.sol'"
@@ -28,7 +29,7 @@
   "homepage": "https://github.com/MyWishPlatform/tron-token#readme",
   "dependencies": {
     "openzeppelin-solidity": "1.10.0",
-    "sc-library": "github:MyWishPlatform/sc-library#0.7.1"
+    "sc-library": "github:MyWishPlatform/sc-library#0.7.2"
   },
   "devDependencies": {
     "bignumber.js": "^7.2.1",
@@ -43,6 +44,6 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "solhint": "^1.2.1",
-    "tronbox": "^2.3.0"
+    "tronbox": "^2.7.14"
   }
 }
